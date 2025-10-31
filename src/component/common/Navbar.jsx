@@ -1,9 +1,10 @@
+import React, {useState} from "react";
 import '../../style/navbar.css';
-import { NavLink, useNavigate, useState } from 'react-router-dom';
-import ApiService from '../../service/ApiService';
+import { NavLink, useNavigate } from "react-router-dom";
+import ApiService from "../../service/ApiService";
 
-const Navbar = () => {
 
+const Navbar = () =>{
 
     const [searchValue, setSearchValue] = useState("");
     const navigate = useNavigate();
@@ -11,42 +12,50 @@ const Navbar = () => {
     const isAdmin = ApiService.isAdmin();
     const isAuthenticated = ApiService.isAuthenticated();
 
-    const handleSearchChange = (e) => {
+    const handleSearchChange =(e) => {
         setSearchValue(e.target.value);
     }
-    const handleSearchSubmit = async (e) => {
+
+    const handleSearchSubmit = async (e) =>{
         e.preventDefault();
         navigate(`/?search=${searchValue}`)
     }
+
     const handleLogout = () => {
-        ApiService.logout();
-        setTimeout(() => {
-            navigate('/login')
-        }, 500);
+        const confirm = window.confirm("Are you sure you want to logout? ");
+        if(confirm){
+            ApiService.logout();
+            setTimeout(()=>{
+                navigate('/login')
+            }, 500);
+        }
     }
-    return (
-        <nav className='navbar'>
-            <div className="navabar-brand">
-                <NavLink to="/"><img src="" alt="logo" /></NavLink>
+
+    return(
+        <nav className="navbar">
+            <div className="navbar-brand">
+                <NavLink to="/" > <img src="./phegon_mart.png" alt="Phegon Mart" /></NavLink>
             </div>
-            <form className='navbar-search' onSubmit={handleSearchSubmit}>
-                <input 
-                    type="text" 
-                    placeholder='search for products' 
-                    value={searchValue} 
-                    onChange={handleSearchChange}
-                />
-                <button type='submit'>Search</button>
+            {/* SEARCH FORM */}
+            <form className="navbar-search" onSubmit={handleSearchSubmit}>
+                <input type="text" 
+                placeholder="Search products" 
+                value={searchValue}
+                onChange={handleSearchChange} />
+                <button type="submit">Search</button>
             </form>
+
             <div className="navbar-link">
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/categories">Categories</NavLink>
-                <NavLink to="/profile">My Account</NavLink>
-                <NavLink to="/admin">Admin</NavLink>
-                <NavLink to="/login">SignIn/Login</NavLink>
-                <NavLink onClick={handleLogout}>Logout</NavLink>
+                <NavLink to="/" >Home</NavLink>
+                <NavLink to="/categories" >Categories</NavLink>
+                {isAuthenticated && <NavLink to="/profile" >My Account</NavLink>}
+                {isAdmin && <NavLink to="/admin" >Admin</NavLink>}
+                {!isAuthenticated && <NavLink to="/login" >Login</NavLink>}
+                {isAuthenticated &&<NavLink onClick={handleLogout} >Logout</NavLink>}
                 <NavLink to="/cart">Cart</NavLink>
             </div>
         </nav>
-    )
-}
+    );
+
+};
+export default Navbar;

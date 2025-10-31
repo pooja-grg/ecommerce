@@ -48,7 +48,7 @@ const cartReducer = (state, action) => {
         }
         case 'CLEAR_CART': {
             localStorage.removeItem('cart');
-            return {...state, cart:newCart};
+            return {...state, cart:[]};
         }
         default: 
             return state;

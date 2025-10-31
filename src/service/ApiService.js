@@ -167,7 +167,7 @@ export default class ApiService {
         return !!token;
     }
 
-    static isAuthenticated() {
+    static isAdmin() {
         const role = localStorage.getItem('role');
         return role === 'ADMIN';
     }
