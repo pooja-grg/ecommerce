@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ProtectedRoute, AdminRoute } from './service/Guard';
 import Navbar from "./component/common/Navbar";
 import { CartProvider } from './component/context/CartContext';
 import Footer from "./component/common/Footer";
@@ -18,7 +19,7 @@ import EditCategory from './component/admin/EditCategory';
 import AdminProductPage from './component/admin/AdminProductPage';
 import AddProductPage from './component/admin/AddProductPage';
 import EditProductPage from './component/admin/EditProductPage';
-import AdminOrdersPage from './component/admin/AdminOrderPage';
+import AdminOrdersPage from './component/admin/AdminOrdersPage';
 import AdminOrderDetailsPage from './component/admin/AdminOrderDetailsPage';
 
 const App = () => {

@@ -34,7 +34,7 @@ const Navbar = () =>{
     return(
         <nav className="navbar">
             <div className="navbar-brand">
-                <NavLink to="/" > <img src="./phegon_mart.png" alt="Phegon Mart" /></NavLink>
+                <NavLink to="/" > <img src="./namasteCart.png" alt="Namaste Cart" /></NavLink>
             </div>
             {/* SEARCH FORM */}
             <form className="navbar-search" onSubmit={handleSearchSubmit}>
@@ -46,7 +46,6 @@ const Navbar = () =>{
             </form>
 
             <div className="navbar-link">
-                <NavLink to="/" >Home</NavLink>
                 <NavLink to="/categories" >Categories</NavLink>
                 {isAuthenticated && <NavLink to="/profile" >My Account</NavLink>}
                 {isAdmin && <NavLink to="/admin" >Admin</NavLink>}
