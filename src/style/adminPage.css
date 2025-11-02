@@ -16,10 +16,10 @@
     font-weight: 700;
     border: none;
     cursor: pointer;
-    background-color: #f68b1e;
+    background-color: #FADADD;
     width: 35%;
-    color: #fff;
+    color: rgb(72, 72, 72);
 }
 .admin-page button:hover{
-    background-color: #a45d17;
+    background-color: #b1a292;
 }

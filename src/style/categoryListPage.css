@@ -27,16 +27,21 @@
     max-width: calc(33.33% - 20px);
 }
 .category-list button{
-    width: 100%;
-    padding: 15px;
+    width: 85%;
+    padding: 10px;
     font-size: 1.2rem;
-    background-color: #f68b1e;
-    color: white;
+    background-color: #FADADD;
+    color: rgb(72, 72, 72);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3 ease;
 }
+
+.category-list button:hover {
+    background: #b1a292;
+}
+
 
 .error-message{
     color: red;

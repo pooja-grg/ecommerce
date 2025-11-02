@@ -27,7 +27,7 @@ const AddProductPage = () => {
         e.preventDefault();
         try {
             const formData = new FormData();
-            formData.append('image', image);
+            formData.append('multipartFile', image);
             formData.append('categoryId', categoryId);
             formData.append('name', name);
             formData.append('description', description);

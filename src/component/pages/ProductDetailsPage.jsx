@@ -11,6 +11,8 @@ const ProductDetailsPage = () => {
     const {cart, dispatch} = useCart();
     const [product, setProduct] = useState(null);
 
+    const BASE_URL = "http://192.168.1.190:8080";
+
     useEffect(()=>{
         fetchProduct();
     }, [productId])
@@ -57,9 +59,11 @@ const ProductDetailsPage = () => {
 
     const cartItem = cart.find(item => item.id === product.id);
 
+    const imageUrl = `${BASE_URL}${product.imageUrl}`;
+
     return(
         <div className="product-detail">
-            <img src={product?.imageUrl} alt={product?.name} />
+            <img src={imageUrl} alt={product?.name} />
             <h1>{product?.name}</h1>
             <p>{product?.description}</p>
             <span>${product.price.toFixed(2)}</span>

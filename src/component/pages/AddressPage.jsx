@@ -89,7 +89,7 @@ const AddressPage = () => {
 
                 <label>
                     Zip Code:
-                    <input type="text"
+                    <input type="number"
                     name="zipcode"
                     value={address.zipCode}
                     onChange={handleChange}

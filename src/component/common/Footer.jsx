@@ -16,7 +16,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="footer-info">
-                <p>&copy; 2025 Namaste Cart. All right reserved.</p>
+                <p>&copy; 2025 Petal Cart. All right reserved.</p>
             </div>
         </footer>
     )

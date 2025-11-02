@@ -7,10 +7,9 @@
 }
 
 .profile-page h2{
-    text-align: center;
     margin-bottom: 20px;
     font-size: 30px;
-    font-weight: 800;
+    font-weight: 600;
 }
 .profile-page h3{
     font-size: 30px;
@@ -19,7 +18,6 @@
     margin-bottom: 10px;
 }
 .profile-page strong{
-    color: #f68b1e;
     font-size: 20px;
 }
 .profile-page ul{
@@ -54,7 +52,7 @@
 
 .profile-page li h4{
     margin-bottom: 5px;
-    font-size: 1.3em;
+    font-size: 0.5;
 }
 
 .profile-page li p{
@@ -63,17 +61,18 @@
 }
 
 .profile-button{
-    background-color: #f68b1e;
-    padding: 13px;
-    font-weight: 700;
+    background-color:#FADADD;
+    padding: 8px;
+    font-weight: 500;
     border: 1px solid white;
-    color: #fff;
-    font-size: 20px;
+    color: #2b253f;
+    font-size: 17px;
     margin: 10px 0px;
+    cursor: pointer;
 } 
 
 .profile-button:hover{
-    background-color: #86490d;
+    background-color: #b1a292;
 }
 .error-message{
     color: red;

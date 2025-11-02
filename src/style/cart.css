@@ -36,8 +36,8 @@
     gap: 10px;
 }
 .quantity-controls button{
-    background-color: #f68b1e;
-    color: white;
+    background-color: #FADADD;
+    color: #2b253f;
     border: none;
     border-radius: 3px;
     padding: 5px 10px;
@@ -45,12 +45,12 @@
     font-size: 1.2em;
 }
 .quantity-controls button:hover {
-    background-color: #93500d;
+    background-color: #b1a292;
 }
 
 .checkout-button{
-    background-color: #f68b1e;
-    color: white;
+    background-color: #FADADD;
+    color: #2b253f;
     border: none;
     border-radius: 5px;
     padding: 20px 20px;
@@ -63,11 +63,11 @@
 }
 
 .checkout-button:hover{
-    background-color: #93500d;
+    background-color: #b1a292;
 
 }
 .response-message{
-    color: #f68b1e;
+    color: #FADADD;
     font-size: 25px;
     font-weight: 700;
     text-align: center;

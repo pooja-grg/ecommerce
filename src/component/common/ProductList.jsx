@@ -5,6 +5,7 @@ import '../../style/productList.css';
 
 
 const ProductList = ({products}) => {
+    const BASE_URL = "http://192.168.1.190:8080"; 
     const {cart, dispatch} = useCart();
 
     const addToCart = (product) => {
@@ -30,13 +31,14 @@ const ProductList = ({products}) => {
         <div className="product-list">
                 {products.map((product, index) => {
                     const cartItem = cart.find(item => item.id === product.id);
+                    const imageUrl = `${BASE_URL}${product.imageUrl}`;
                     return (
                         <div className="product-item" key={index}>
                             <Link to={`/product/${product.id}`}>
-                            <img src={product.imageUrl} alt={product.name} className="product-image" />
+                            <img src={imageUrl} alt={product.name} className="product-image" />
                             <h3>{product.name}</h3>
                             <p>{product.description}</p>
-                            <span>${product.price.toFixed(2)}</span>
+                            <span>Rs {product.price.toFixed(2)}</span>
                             </Link>
                             {cartItem ? (
                                 <div className="quantity-controls">

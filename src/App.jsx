@@ -30,9 +30,9 @@ const App = () => {
                     <Routes>
                         <Route exact path="/" element={<Home/>} />
                         <Route path='/product/:productId' element={<ProductDetailsPage/>} />
-                        <Route path='/categories' element={<CategoryListPage/>}/>
-                        <Route path='/category/:categoryId' element={<CategoryProductsPage/>} />
-                        <Route path='/cart' element={<CartPage/>}/>
+                        <Route path='/categories' element={<ProtectedRoute element={<CategoryListPage/>} />}/>
+                        <Route path='/category/:categoryId' element={<ProtectedRoute element={<CategoryProductsPage/>} />}/>
+                        <Route path='/cart' element={<ProtectedRoute element={<CartPage/>} />}/>
                         <Route path='/register' element={<RegisterPage/>}/>
                         <Route path='/login' element={<LoginPage/>}/>
 

@@ -8,14 +8,14 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #f68b1e;
+    background-color: #b48894;
     padding: 10px 20px;
-    font-size: 20px;
-    font-family: 600;
+    font-size: 16px;
+    font-family: 100;
 }
 
 .navbar-brand img {
-    height: 80px;
+    height: 53px;
 }
 
 .navbar-search input {
@@ -29,8 +29,8 @@ body {
     padding: 10px;
     border: none;
     margin-left: 2px;
-    background-color: #fff;
-    color: #f68b1e;
+    background-color: #FADADD;
+    color: #2b253f;
     font-weight: bold;
     border-radius: 3px;
     cursor: pointer;
@@ -39,7 +39,7 @@ body {
 .navbar-link a,
 li {
     text-decoration: none;
-    color: #fff;
+    color: #2b253f;
     margin: 0 10px;
     font-weight: bold;
     list-style: none;

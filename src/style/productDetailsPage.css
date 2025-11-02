@@ -5,7 +5,6 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     align-items: center;
-
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -22,7 +21,7 @@
 .product-detail span{
     display: block;
     font-size: 20px;
-    color: #f68b1e;
+    color: #b48894;
 }
 .product-detail button{
     display: block;
@@ -30,11 +29,11 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #f68b1e;
-    color: white;
+    background-color: #FADADD;
+    color: #2b253f;
     font-size: 16px;
     cursor: pointer;
 }
 .product-detail button:hover{
-    background-color: #8b4c0d;
+    background-color: #b1a292;
 }
