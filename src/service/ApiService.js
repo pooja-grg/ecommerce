@@ -1,7 +1,9 @@
 import axios from "axios";
 
 export default class ApiService {
+
     static BASE_URL = "http://localhost:2424";
+
     static getHeader() {
         const token = localStorage.getItem("token");
         return {
@@ -9,16 +11,19 @@ export default class ApiService {
             "Content-Type": "application/json"
         };
     }
-    // Auth and users Api
+
+    /**AUTh && USERS API */
     static async registerUser(registration) {
-        const response = await axios.post(`${this.BASE_URL}/auth/register`, registration);
+        const response = await axios.post(`${this.BASE_URL}/auth/register`, registration)
         return response.data;
     }
 
+
     static async loginUser(loginDetails) {
-        const response = await axios.post(`${this.BASE_URL}/auth/login`, loginDetails);
+        const response = await axios.post(`${this.BASE_URL}/auth/login`, loginDetails)
         return response.data;
     }
+
 
     static async getLoggedInUserInfo() {
         const response = await axios.get(`${this.BASE_URL}/user/my-info`, {
@@ -27,9 +32,11 @@ export default class ApiService {
         return response.data;
     }
 
-    //Products endpoints
-    static async addProduct(fromData) {
-        const response = await axios.post(`${this.BASE_URL}/product/create`, fromData, {
+
+    /**PRODUCT ENDPOINT */
+
+    static async addProduct(formData) {
+        const response = await axios.post(`${this.BASE_URL}/product/create`, formData, {
             headers: {
                 ...this.getHeader(),
                 "Content-Type": "multipart/form-data"
@@ -38,8 +45,8 @@ export default class ApiService {
         return response.data;
     }
 
-    static async updateProduct(productId, formData) {
-        const response = await axios.put(`${this.BASE_URL}/product/update/${productId}`, formData, {
+    static async updateProduct(formData) {
+        const response = await axios.put(`${this.BASE_URL}/product/update`, formData, {
             headers: {
                 ...this.getHeader(),
                 "Content-Type": "multipart/form-data"
@@ -49,24 +56,24 @@ export default class ApiService {
     }
 
     static async getAllProducts() {
-        const response = await axios.get(`${this.BASE_URL}/product/get-all`);
+        const response = await axios.get(`${this.BASE_URL}/product/get-all`)
         return response.data;
     }
 
     static async searchProducts(searchValue) {
         const response = await axios.get(`${this.BASE_URL}/product/search`, {
-            params: {searchValue}
+            params: { searchValue }
         });
         return response.data;
     }
 
     static async getAllProductsByCategoryId(categoryId) {
-        const response = await axios.get(`${this.BASE_URL}/product/get-by-category-id/${categoryId}`);
+        const response = await axios.get(`${this.BASE_URL}/product/get-by-category-id/${categoryId}`)
         return response.data;
     }
 
     static async getProductById(productId) {
-        const response = await axios.get(`${this.BASE_URL}/product/get-by-product-id/${productId}`);
+        const response = await axios.get(`${this.BASE_URL}/product/get-by-product-id/${productId}`)
         return response.data;
     }
 
@@ -77,7 +84,7 @@ export default class ApiService {
         return response.data;
     }
 
-    //category
+    /**CATEGORY */
     static async createCategory(body) {
         const response = await axios.post(`${this.BASE_URL}/category/create`, body, {
             headers: this.getHeader()
@@ -95,7 +102,7 @@ export default class ApiService {
         return response.data;
     }
 
-    static async updateCategory(categoryId) {
+    static async updateCategory(categoryId, body) {
         const response = await axios.put(`${this.BASE_URL}/category/update/${categoryId}`, body, {
             headers: this.getHeader()
         })
@@ -103,13 +110,13 @@ export default class ApiService {
     }
 
     static async deleteCategory(categoryId) {
-        const response = await axios.delete(`${this.BASE_URL}/category/delete/${categoryId}`,{
+        const response = await axios.delete(`${this.BASE_URL}/category/delete/${categoryId}`, {
             headers: this.getHeader()
         })
         return response.data;
     }
 
-    //order endpoints
+    /**ORDEDR */
     static async createOrder(body) {
         const response = await axios.post(`${this.BASE_URL}/order/create`, body, {
             headers: this.getHeader()
@@ -125,7 +132,7 @@ export default class ApiService {
     }
 
     static async getOrderItemById(itemId) {
-        const response = await axios.post(`${this.BASE_URL}/order/filter`, {
+        const response = await axios.get(`${this.BASE_URL}/order/filter`, {
             headers: this.getHeader(),
             params: {itemId}
         })
@@ -133,42 +140,48 @@ export default class ApiService {
     }
 
     static async getAllOrderItemsByStatus(status) {
-        const response = await axios.post(`${this.BASE_URL}/order/filter`, {
+        const response = await axios.get(`${this.BASE_URL}/order/filter`, {
             headers: this.getHeader(),
             params: {status}
         })
         return response.data;
     }
 
-    static async updateOrderItemStatus(orderItemId, status) {
-        const response = await axios.put(`${this.BASE_URL}/order/update-item-status/${orderItemId}`, {
+    static async updateOrderitemStatus(orderItemId, status) {
+        const response = await axios.put(`${this.BASE_URL}/order/update-item-status/${orderItemId}`, {}, {
             headers: this.getHeader(),
             params: {status}
         })
         return response.data;
     }
 
-    //address
-    static async saveaddress(body) {
+
+
+
+    /**ADDRESS */
+    static async saveAddress(body) {
         const response = await axios.post(`${this.BASE_URL}/address/save`, body, {
             headers: this.getHeader()
         })
         return response.data;
     }
 
-    //authentication checker
-    static logout() {
-        localStorage.removeItem('token');
-        localStorage.removeItem('role');
+    /***AUTHEMNTICATION CHECKER */
+    static logout(){
+        localStorage.removeItem('token')
+        localStorage.removeItem('role')
     }
 
-    static isAuthenticated() {
-        const token = localStorage.getItem('token');
-        return !!token;
+    static isAuthenticated(){
+        const token = localStorage.getItem('token')
+        return !!token
     }
 
-    static isAdmin() {
-        const role = localStorage.getItem('role');
-        return role === 'ADMIN';
+    static isAdmin(){
+        const role = localStorage.getItem('role')
+        return role === 'ADMIN'
     }
+
+
+
 }
