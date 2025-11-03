@@ -51,7 +51,7 @@ const ProfilePage = () => {
 
     return (
         <div className="profile-page">
-            <h2>Welcome {userInfo.name}</h2>
+            <h2>👤 Welcome {userInfo.name}</h2>
 
             {error ? (
                 <p className="error-message">{error}</p>
