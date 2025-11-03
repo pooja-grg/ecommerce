@@ -11,7 +11,7 @@ const ProductDetailsPage = () => {
     const {cart, dispatch} = useCart();
     const [product, setProduct] = useState(null);
 
-    const BASE_URL = "http://192.168.1.190:8080";
+    const BASE_URL = "http://localhost:8082";
 
     useEffect(()=>{
         fetchProduct();

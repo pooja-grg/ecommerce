@@ -5,7 +5,7 @@ import '../../style/productList.css';
 
 
 const ProductList = ({products}) => {
-    const BASE_URL = "http://192.168.1.190:8080"; 
+    const BASE_URL = "http://localhost:8082"; 
     const {cart, dispatch} = useCart();
 
     const addToCart = (product) => {

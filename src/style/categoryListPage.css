@@ -27,8 +27,8 @@
     max-width: calc(33.33% - 20px);
 }
 .category-list button{
-    width: 85%;
-    padding: 10px;
+    width: 100%;
+    padding: 20px;
     font-size: 1.2rem;
     background-color: #FADADD;
     color: rgb(72, 72, 72);
