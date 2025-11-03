@@ -64,9 +64,9 @@ const ProductDetailsPage = () => {
     return(
         <div className="product-detail">
             <img src={imageUrl} alt={product?.name} />
-            <h1>{product?.name}</h1>
+            <h2>{product?.name}</h2>
             <p>{product?.description}</p>
-            <span>${product.price.toFixed(2)}</span>
+            <span>Rs {product.price.toFixed(2)}</span>
             {cartItem ? (
                 <div className="quantity-controls">
                     <button onClick={decrementItem}>-</button>

@@ -1,6 +1,6 @@
 .product-detail{
     max-width: 350px;
-    margin: 10rem auto 10rem auto;
+    margin: 2rem auto 5rem auto;
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -11,11 +11,11 @@
 }
 
 .product-detail img{
-    width: 350px;
+    width: 300px;
     height: auto;
 }
 
-.product-detail h1{
+.product-detail h2{
     text-align: center;
 }
 .product-detail span{

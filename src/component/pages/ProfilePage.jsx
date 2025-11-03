@@ -12,6 +12,8 @@ const ProfilePage = () => {
     const itemsPerPage = 5;
     const navigate = useNavigate();
 
+    const BASE_URL = "http://localhost:8082";
+
 
     useEffect(() => {
 
@@ -78,9 +80,11 @@ const ProfilePage = () => {
                     </div>
                     <h3>Order History</h3>
                     <ul>
-                        {paginatedOrders.map(order => (
+                        {paginatedOrders.map(order => {
+                            const imageUrl = `${BASE_URL}${order.product.imageUrl}`;
+                            return (
                             <li key={order.id}>
-                                <img src={order.product?.imageUrl} alt={order.product.name} />
+                                <img src={imageUrl} alt={order.product.name} />
                                 <div>
                                     <p><strong>Name: </strong>{order.product.name}</p>
                                     <p><strong>Status: </strong>{order.status}</p>
@@ -88,7 +92,7 @@ const ProfilePage = () => {
                                     <p><strong>Price: </strong>{order.price.toFixed(2)}</p>
                                 </div>
                             </li>
-                        ))}
+                        )})}
                     </ul>
                     <Pagination
                     currentPage={currentPage}
